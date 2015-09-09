@@ -1,7 +1,11 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Mustache You</a>
-    </div>
+  <div class="navbar-header">
+    {{#link-to 'index' class="navbar-brand" }}Mustache You{{/link-to}}
+  </div>
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right">
+    </ul>
+  </div>
 </nav>
 
 {{outlet}}

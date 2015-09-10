@@ -27,6 +27,11 @@ export default Ember.Controller.extend({
 
     change: function() {
       this.set("hasError", false);
+    },
+
+    remove: function(song) {
+      song.deleteRecord();
+      song.save();
     }
   }
 });

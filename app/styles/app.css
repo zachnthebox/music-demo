@@ -1,1 +1,8 @@
 @import "bower_components/font-awesome/scss/font-awesome";
+body {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+.listItemLabelText {
+  font-size: 1.3em;
+}

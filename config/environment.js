@@ -12,6 +12,9 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    contentSecurityPolicy: {
+      'connect-src': "'self' http://localhost:4500"
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -25,6 +28,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API_ENDPOINT = "http://localhost:4500";
   }
 
   if (environment === 'test') {
@@ -37,10 +41,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.API_ENDPOINT = "http://localhost:4500";
   }
 
   if (environment === 'production') {
-
+    ENV.API_ENDPOINT = "https://mustache-you-are-you-a-server.herokuapp.com";
   }
 
   return ENV;

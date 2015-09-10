@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  hasError: false,
+
   actions: {
     addMusic: function() {
       var title = this.get("title");
@@ -8,7 +10,7 @@ export default Ember.Controller.extend({
       var artist = this.get("artist");
 
       if (!title || !album || !artist) {
-        alert("Enter in everything or else!");
+        this.set("hasError", true);
         return;
       }
 
@@ -21,6 +23,10 @@ export default Ember.Controller.extend({
       this.set("title", "");
       this.set("album", "");
       this.set("artist", "");
+    },
+
+    change: function() {
+      this.set("hasError", false);
     }
   }
 });

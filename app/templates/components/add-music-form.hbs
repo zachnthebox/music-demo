@@ -1,0 +1,23 @@
+{{#if hasError}}
+  <div class="alert alert-danger">Invalid Form</div>
+{{/if}}
+<div class="form-group">
+  <label class="col-md-4 col-lg-3">Song</label>
+  <div class="col-md-8 col-lg-9">
+    {{input text="text" value=title required="true" placeholder="Shake It Off" class="form-control" key-press="change"}}
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 col-lg-3">Artist</label>
+  <div class="col-md-8 col-lg-9">
+    {{input type="text" value=artist required="true" placeholder="Taylor Swift" class="form-control" key-press="change"}}
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 col-lg-3">Album</label>
+  <div class="col-md-8 col-lg-9">
+    {{input type="text" value=album required="true" placeholder="1989" class="form-control" key-press="change"}}
+  </div>
+</div>
+<button class="pull-right btn btn-primary" {{action "addSong"}}>Submit</button>
+<div class="clearfix"></div>

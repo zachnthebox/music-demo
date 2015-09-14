@@ -5,13 +5,13 @@ body {
 .listItemLabelText {
   font-size: 1.3em;
 }
-.cursorPointer {
+[data-ember-action], .cursorPointer {
   cursor: pointer;
 }
 .navbar-header {
   float: left;
 }
 .navbar-right {
-    float: right !important;
-    margin-right: -15px;
+  float: right !important;
+  margin-right: -15px;
 }

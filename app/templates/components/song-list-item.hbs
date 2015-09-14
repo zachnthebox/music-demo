@@ -3,7 +3,7 @@
     <div class="media-heading listItemLabelText">{{song.title}}</div>
     <div>{{song.artist}} &mdash; {{song.album}}</div>
   </div>
-  <div class="media-right media-middle cursorPointer" {{action "remove" song}}>
-    {{fa-icon "minus" classNames="text-danger"}}
+  <div class="media-right media-middle">
+    {{delete-button delete="removeSong"}}
   </div>
 </div>

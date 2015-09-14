@@ -1,0 +1,7 @@
+<div class="delete-icon" {{action "confirmDelete" bubbles=false}}>
+  {{fa-icon "minus-circle" classNames="text-danger" size=2 title="Delete"}}
+</div>
+<button class="btn btn-danger delete-button hidden" {{action "delete" bubbles=false}}>
+  {{fa-icon "trash-o" size="lg"}}
+  <span>Confirm Delete</span>
+</button>

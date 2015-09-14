@@ -5,8 +5,7 @@ export default Ember.Controller.extend({
     addSong: function(song) {
       this.store.createRecord("song", song).save();
     },
-
-    deleteSong: function(song) {
+    removeSong: function(song) {
       song.deleteRecord();
       song.save();
     }

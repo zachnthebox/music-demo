@@ -1,13 +1,8 @@
-import Ember from 'ember';
+import ModalComponents from 'mustache-you/components/modal';
 
-export default Ember.Component.extend({
-  actions: {
-    okay: function() {
-      this.$('.modal').modal('hide');
-      this.sendAction('okay');
-      return true;
-    }
-  },
+export default ModalComponents.extend({
+  templateName: "confirm-modal",
+
   show: function() {
     this.$('.modal').modal().on('hidden.bs.modal', function() {
       this.sendAction('close');

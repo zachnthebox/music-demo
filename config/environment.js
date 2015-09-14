@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'mustache-you',
+    firebase: "https://luminous-inferno-1019.firebaseio.com/",
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -11,9 +12,6 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
-    },
-    contentSecurityPolicy: {
-      'connect-src': "'self' http://localhost:4500"
     },
 
     APP: {

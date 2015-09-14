@@ -1,7 +1,8 @@
-import DS from 'ember-data';
-import config from '../config/environment';
+import Ember from 'ember';
+import FirebaseAdapter from 'emberfire/adapters/firebase';
 
-export default DS.JSONAPIAdapter.extend({
-	namespace: 'api',
-	host: config.API_ENDPOINT
+const { inject } = Ember;
+
+export default FirebaseAdapter.extend({
+  firebase: inject.service(),
 });

@@ -7,16 +7,16 @@ export default Ember.Controller.extend({
 				title: song.album,
 				artist: song.artist
 			});
-			var song = this.store.createRecord("song", {
+			var songRecord = this.store.createRecord("song", {
 				title: song.title,
 				artist: song.artist,
 				album: album,
 			});
 
-			album.get("songs").pushObject(song);
+			album.get("songs").pushObject(songRecord);
 
 			album.save();
-			song.save();
+			songRecord.save();
 		},
 		removeSong: function(song) {
 			song.deleteRecord();

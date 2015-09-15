@@ -20,7 +20,7 @@ export default Ember.Component.extend({
 			$(".addMusicTwistieIcon").animate({
 				rotation: expanded ? 0 : 90
 			}, {
-				step: function(now, fx) {
+				step: function(now) {
 					$(this).css('transform', "rotate(" + now + "deg)");
 				},
 				duration: "fast"

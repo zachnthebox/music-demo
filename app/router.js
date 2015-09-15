@@ -6,10 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource("music", {
-    path: "music"
-  }, function() {
-    this.route("music");
+  this.route("music", function() {
+    this.route("album");
   });
 });
 

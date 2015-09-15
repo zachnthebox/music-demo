@@ -1,0 +1,5 @@
+{{#each model as |song|}}
+	{{song-list-item songs=song removeSong="removeSong"}}
+	{{else}}
+		{{status-list-item label='Nothing to see here. Add some songs.'}}
+{{/each}}

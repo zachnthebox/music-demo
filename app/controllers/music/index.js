@@ -1,25 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  actions: {
-    addSong: function(song) {
-      var album = this.store.createRecord("album", {
-        title: song.album,
-        artist: song.artist,
-        songs: []
-      });
-      var song = this.store.createRecord("song", {
-        title: song.title,
-        artist: song.artist,
-        album: album,
-      });
+	actions: {
+		removeAlbum: function(album) {
+			if (!album) {
+				return;
+			}
 
-      album.save();
-      song.save();
-    },
-    removeSong: function(song) {
-      song.deleteRecord();
-      song.save();
-    }
-  }
+			var promises = album.get("songs").map(function(song) {
+				if (song && !song.get("isDeleted")) {
+					return song.destroyRecord();
+				}
+			});
+
+			if (!album.get("isDeleted")) {
+				Ember.RSVP.Promise.all(promises).then(function() {
+					album.destroyRecord().then(function() {
+						this.transitionToRoute("music");
+					}.bind(this));
+				}.bind(this));
+			}
+		}
+	}
 });

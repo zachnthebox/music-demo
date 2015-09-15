@@ -1,11 +1,5 @@
-<div class="panel panel-default">
-	<div class="panel-heading">Add Music</div>
-	<div class="panel-body">
-		{{add-music-form addSong="addSong"}}
-	</div>
-</div>
-
-<div class="panel panel-default">
-	<div class="panel-heading">Music</div>
-	{{song-list songs=model removeSong="removeSong"}}
-</div>
+{{#each model as |album|}}
+    {{album-list-item album=album removeAlbum="removeAlbum"}}
+    {{else}}
+        {{status-list-item label="Nothing to see here. Add some albums."}}
+{{/each}}

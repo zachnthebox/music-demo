@@ -3,5 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   title: DS.attr('string'),
   artist: DS.attr('string'),
-  songs: DS.hasMany('song')
+  songs: DS.hasMany('song', {
+    async: true
+  })
 });

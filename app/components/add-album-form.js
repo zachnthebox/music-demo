@@ -17,14 +17,7 @@ export default Ember.Component.extend({
 			var expanded = this.get("expanded");
 			this.set("expanded", !expanded);
 
-			$(".addMusicTwistieIcon").animate({
-				rotation: expanded ? 0 : 90
-			}, {
-				step: function(now) {
-					$(this).css('transform', "rotate(" + now + "deg)");
-				},
-				duration: "fast"
-			}, "linear");
+			$(".addMusicTwistieIcon").toggleClass("rotate90");
 		},
 		addAlbum: function() {
 			var title = this.get("title");

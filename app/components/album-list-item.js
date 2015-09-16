@@ -3,19 +3,12 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	tagName: "a",
 	classNames: ["list-group-item"],
+	classNameBindings: ["isActive"],
 	selectedAlbum: undefined,
 
-	updateStatus: function() {
-		if (this.get("album").get("id") === this.get("selectedAlbum")) {
-			this.$().addClass("active");
-		} else {
-			this.$().removeClass("active");
-		}
-	}.observes("selectedAlbum"),
-
-	didInsertElement: function() {
-		this.updateStatus();
-	},
+	isActive: function() {
+		return (this.get("album").get("id") === this.get("selectedAlbum")) ? "active" : "";
+	}.property("selectedAlbum"),
 
 	actions: {
 		click: function() {

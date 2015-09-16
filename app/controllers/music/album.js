@@ -15,11 +15,11 @@ export default Ember.Controller.extend({
 			song.save();
 		},
 		removeSong: function(song) {
-			var album = song.get("album");
-			album.removeObject(song);
-			album.save();
-
-			song.destroyRecord();
+			song.get("album").then(function(album) {
+				album.get("songs").removeObject(song);
+				album.save();
+				song.destroyRecord();
+			});
 		}
 	}
 });

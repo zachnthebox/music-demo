@@ -4,10 +4,9 @@ export default Ember.Route.extend({
 	model: function() {
 		return this.store.query("album", {});
 	},
-
-	renderTemplate: function() {
-		this.render({
-			outlet: "album-list"
-		});
+	actions: {
+		loading: function() {
+			return true;
+		}
 	}
 });

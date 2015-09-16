@@ -1,11 +1,9 @@
-{{#link-to "music.album" tagNames="li" classNames="list-group-item"}}
-	<div class="media">
-		<div class="media-body">
-			<div class="media-heading listItemLabelText">{{album.title}}</div>
-			<div>{{album.artist}}</div>
-		</div>
-		<div class="media-right media-middle">
-			{{delete-button delete="removeAlbum"}}
-		</div>
+<div class="media" {{action "click"}}>
+	<div class="media-body">
+		<div class="media-heading listItemLabelText">{{album.title}}</div>
+		<div>{{album.artist}}</div>
 	</div>
-{{/link-to}}
+	<div class="media-right media-middle">
+		{{delete-button delete="removeAlbum"}}
+	</div>
+</div>

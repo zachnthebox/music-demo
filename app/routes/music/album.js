@@ -2,18 +2,10 @@ import Ember from "ember";
 
 export default Ember.Route.extend({
 	model: function(params) {
-		this.store.query("song", {
-			album_id: params.album_id
-		}).then(function(song) {
-			console.log(song, song.get("title"))
-		});
-		return this.store.query("song", {
-			album: params.album_id
-		});
+		this.controllerFor("music").set("selectedAlbum", params.album_id);
+		return this.store.find("album", params.album_id);
 	},
-	renderTemplate: function() {
-		this.render({
-			outlet: "song-list"
-		});
+	deactivate: function() {
+		this.controllerFor("music").set("selectedAlbum", this.paramsFor().album_id);
 	}
 });

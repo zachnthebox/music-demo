@@ -5,16 +5,15 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Albums</div>
 			<ul class="list-group">
-				{{outlet "album-list"}}
+				{{#each model as |album|}}
+					{{album-list-item album=album removeAlbum="removeAlbum" click="albumDetail" selectedAlbum=selectedAlbum}}
+					{{else}}
+						{{status-list-item label="Nothing to see here. Add some albums."}}
+				{{/each}}
 			</ul>
 		</div>
 	</div>
 	<div class="col-md-8">
-		<div class="panel panel-default">
-			<div class="panel-heading">Songs on the album</div>
-			<ul class="list-group">
-				{{outlet "song-list"}}
-			</ul>
-		</div>
+		{{outlet}}
 	</div>
 </div>

@@ -1,5 +1,10 @@
-{{#each model as |song|}}
-	{{song-list-item song=song removeSong="removeSong"}}
-	{{else}}
-		{{status-list-item label='Nothing to see here. Add some songs.'}}
-{{/each}}
+<div class="panel panel-default">
+	<div class="panel-heading">Songs on the album</div>
+	<ul class="list-group">
+		{{#each model.songs as |song|}}
+			{{song-list-item song=song removeSong="removeSong"}}
+			{{else}}
+				{{status-list-item label='Nothing to see here. Add some songs.'}}
+		{{/each}}
+	</ul>
+</div>

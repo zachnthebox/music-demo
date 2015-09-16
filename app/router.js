@@ -7,7 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route("music", function() {
-    this.route("album");
+    this.route("album", {
+        path: "/:album_id"
+    });
   });
 });
 

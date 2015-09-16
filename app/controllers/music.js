@@ -16,19 +16,11 @@ export default Ember.Controller.extend({
 				return;
 			}
 
-			var promises = album.get("songs").map(function(song) {
-				if (song && !song.get("isDeleted")) {
-					return song.destroyRecord();
-				}
-			});
-
-			if (!album.get("isDeleted")) {
-				Ember.RSVP.Promise.all(promises).then(function() {
-					album.destroyRecord().then(function() {
-						this.transitionToRoute("music");
-					}.bind(this));
-				}.bind(this));
-			}
+			var songs = album.get("songs").map(song => song);
+			album.destroyRecord().then(function() {
+				songs.forEach(song => song.destroyRecord());
+				this.transitionToRoute("music");
+			}.bind(this));
 		},
 		addAlbum: function(song) {
 			var album = this.store.createRecord("album", {

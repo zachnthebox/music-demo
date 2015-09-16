@@ -43,8 +43,9 @@ export default Ember.Controller.extend({
 
 			album.get("songs").pushObject(song);
 
-			album.save();
-			song.save();
+			song.save().then(function() {
+				album.save();
+			});
 		}
 	}
 });

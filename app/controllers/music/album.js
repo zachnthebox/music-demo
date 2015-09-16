@@ -11,14 +11,16 @@ export default Ember.Controller.extend({
 
 			album.get("songs").pushObject(song);
 
-			album.save();
-			song.save();
+			album.save().then(function() {
+				song.save();
+			});
 		},
 		removeSong: function(song) {
 			song.get("album").then(function(album) {
 				album.get("songs").removeObject(song);
-				album.save();
-				song.destroyRecord();
+				album.save().then(function() {
+					song.destroyRecord();
+				});
 			});
 		}
 	}

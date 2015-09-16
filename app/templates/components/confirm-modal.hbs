@@ -1,12 +1,12 @@
 <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-body">
-      <h3 class="modal-title">{{view.title}}</h3>
-      {{view.message}}
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal" {{action 'cancel' on="click"}}>Cancel</button>
-      <button type="button" class="btn btn-primary" {{action 'okay' model on="click"}}>Okay</button>
-    </div>
-  </div>
+	<div class="modal-content">
+		<div class="modal-body">
+			<h3 class="modal-title">{{title}}</h3>
+			{{message}}
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal" {{action 'cancel' on="click"}}>Cancel</button>
+			<button type="button" class="btn btn-primary" {{action 'okay' model on="click"}}>Okay</button>
+		</div>
+	</div>
 </div>

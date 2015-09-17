@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-4 {{if isDetail 'hidden-xs hidden-sm'}}">
 		<div class="panel panel-default">
 			<div class="panel-heading">Albums</div>
 			<ul class="list-group">
@@ -11,7 +11,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-8 {{unless isDetail 'hidden-xs hidden-sm'}}">
 		{{outlet}}
 	</div>
 </div>

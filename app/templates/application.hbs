@@ -1,16 +1,20 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="navbar-header">
-    {{#link-to 'index' class="navbar-brand" }}Mustache You{{/link-to}}
-  </div>
-  <div class="container-fluid">
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        {{#link-to 'music'}}Music{{/link-to}}
-      </li>
-    </ul>
-  </div>
+	<span {{action "back" bubbles=false}} class="hidden-md hidden-lg {{unless hasBackRoute 'hidden'}}">
+		{{fa-icon "arrow-left" pull="left" classNames="btn btn-link back-arrow" tagName="a"}}
+	</span>
+
+	<div class="navbar-header">
+		{{#link-to 'index' class="navbar-brand" }}Mustache You{{/link-to}}
+	</div>
+	<div class="container-fluid">
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				{{#link-to 'music'}}Music{{/link-to}}
+			</li>
+		</ul>
+	</div>
 </nav>
 
 <div class="container">
-  {{outlet}}
+	{{outlet}}
 </div>

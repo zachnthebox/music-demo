@@ -20,3 +20,10 @@ body {
     float: right !important;
     margin-right: -15px;
 }
+
+.back-arrow {
+    padding: 0 0 0 10px;
+    margin: 9px;
+    font-size: 1.4em;
+    text-decoration: none !important;
+}

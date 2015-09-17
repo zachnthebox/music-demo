@@ -1,23 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	expanded: false,
+	tagName: "form",
 
-	classNames: ["panel panel-default"],
+	classNames: ["form-horizontal"],
+
 	hasError: false,
 
-	didInsertElement: function() {
-		this.$(".panel-heading").click(function() {
-			this.$(".panel-body").collapse("toggle");
-		}.bind(this));
-	},
-
 	actions: {
-		toggleAdd: function() {
-			var expanded = this.get("expanded");
-			this.set("expanded", !expanded);
-
-			$(".addMusicTwistieIcon").toggleClass("rotate90");
+		submit: function() {
+			this.send("addAlbum");
 		},
 		addAlbum: function() {
 			var title = this.get("title");

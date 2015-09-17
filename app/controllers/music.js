@@ -1,10 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	isFulFilled: function() {
-		return this.get("model").isFulFilled;
-	}.property("model"),
-
+	isDetail: false,
 	selectedAlbum: undefined,
 
 	actions: {

@@ -4,7 +4,8 @@ export default Ember.Component.extend({
 	hasError: false,
 
 	defaultArtist: function() {
-		return this.get("album").get("artist");
+		var album = this.get("album");
+		return album && album.get("artist");
 	}.property("album"),
 
 	artistPlaceholder: function() {
@@ -16,7 +17,8 @@ export default Ember.Component.extend({
 	songToAdd: undefined,
 
 	songs: function() {
-		return this.get("album").get("songs");
+		var album = this.get("album");
+		return album && album.get("songs") || [];
 	}.property("album"),
 
 	album: undefined,

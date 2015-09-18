@@ -1,9 +1,9 @@
 <div class="media">
-  <div class="media-body">
-    <div class="media-heading listItemLabelText">{{song.title}}</div>
-    <div>{{song.artist}}</div>
-  </div>
-  <div class="media-right media-middle">
-    {{delete-button delete="removeSong"}}
-  </div>
+	<div class="media-body">
+		<div class="media-heading listItemLabelText">{{song.title}}</div>
+		<div>{{song.artist}}</div>
+	</div>
+	<div class="media-right media-middle {{unless showDelete 'hidden'}}">
+		{{delete-button delete="removeSong"}}
+	</div>
 </div>

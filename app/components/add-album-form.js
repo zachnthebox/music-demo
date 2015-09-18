@@ -7,9 +7,12 @@ export default Ember.Component.extend({
 
 	hasError: false,
 
+	songs: [],
+
 	actions: {
 		submit: function() {
 			this.send("addAlbum");
+			return false;
 		},
 		addAlbum: function() {
 			var title = this.get("title");

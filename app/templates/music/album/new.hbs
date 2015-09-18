@@ -1,9 +1,9 @@
-{{#bootstrap-modal visibleOnStartup=modalVisible close="close"}}
+{{#bootstrap-modal visibleOnStartup=true close="close"}}
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal">&times;</button>
-		<h4 class="modal-title">Add Album</h4>
+		<h4 class="modal-title">Add Songs</h4>
 	</div>
 	<div class="modal-body">
-		<div>{{add-album-form addAlbum="addAlbum"}}</div>
+		<div>{{edit-songs addSong="addSong" album=model removeSong="removeSong"}}</div>
 	</div>
 {{/bootstrap-modal}}

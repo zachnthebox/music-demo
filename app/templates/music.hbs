@@ -1,7 +1,10 @@
 <div class="row">
 	<div class="col-md-4 {{if isDetail 'hidden-xs hidden-sm'}}">
 		<div class="panel panel-default">
-			<div class="panel-heading">Albums</div>
+			<div class="panel-heading">
+				Albums
+				{{#link-to "music.new"}}{{fa-icon "plus" pull="right" classNames="panelHeaderAdd"}}{{/link-to}}
+			</div>
 			<ul class="list-group">
 				{{#each model as |album|}}
 					{{album-list-item album=album removeAlbum="removeAlbum" click="albumDetail" selectedAlbum=selectedAlbum}}

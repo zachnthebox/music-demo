@@ -1,6 +1,10 @@
 import Ember from "ember";
 
 export default Ember.Route.extend({
+	model: function() {
+		return this.modelFor("music.album");
+	},
+
 	renderTemplate: function() {
 		this.render({
 			outlet: "modal",

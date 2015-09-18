@@ -1,11 +1,11 @@
 <div class="panel panel-default">
 	<div class="panel-heading">Songs on
 		<strong>{{model.title}}</strong>
-		{{#link-to "music.album.new"}}{{fa-icon "plus" pull="right" classNames="panelHeaderAdd"}}{{/link-to}}
+		{{#link-to "music.album.new"}}{{fa-icon "pencil" pull="right" classNames="panelHeaderAdd"}}{{/link-to}}
 	</div>
 	<ul class="list-group">
 		{{#each model.songs as |song|}}
-			{{song-list-item song=song removeSong="removeSong"}}
+			{{song-list-item song=song removeSong="removeSong" showDelete=false}}
 			{{else}}
 				{{status-list-item label='Nothing to see here. Add some songs.'}}
 		{{/each}}

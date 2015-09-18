@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	tagName: "li",
+	tagName: "a",
 	classNames: ["list-group-item"],
 	showDelete: true,
 	actions: {

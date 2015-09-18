@@ -5,28 +5,25 @@ export default Ember.Component.extend({
 
 	classNames: ["modal"],
 
-	visible: false,
+	visibleOnStartup: false,
 
-	toggle: function() {
-		var action = this.get("visible") ? "show" : "hide";
-		this.$().modal(action);
-	}.observes("visible"),
+	static: false,
 
 	hide: function() {
+		//force modal to close for removing backdrop
 		this.$().modal("hide");
 	}.on("willDestroyElement"),
 
-	didInsertElement: function() {
-		debugger;
-		this.$().modal({
-			show: this.get("visible")
-		}).on("hidden.bs.modal", function() {
+	show: function() {
+		var properties = {};
+		properties.show = this.get("visibleOnStartup");
+		if (this.get("static")) {
+			properties.backdrop = "static";
+			properties.keyboard = false;
+		}
+		this.$().modal(properties).on("hidden.bs.modal", function() {
 			this.sendAction("close");
+			this.$().modal().off("hidden.bs.modal");
 		}.bind(this));
-	},
-
-	willDestroyElement: function() {
-		this.$().modal().off("hidden.bs.modal");
-		return this._super(arguments);
-	}
+	}.on("didInsertElement")
 });

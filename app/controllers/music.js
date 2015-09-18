@@ -1,10 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-<<<<<<< HEAD
-=======
 	isDetail: false,
->>>>>>> origin/master
+
 	selectedAlbum: undefined,
 
 	actions: {
